@@ -1,0 +1,50 @@
+@startuml
+' BDD Billetterie - ER simplifié
+entity "Evenement" as E {
+  * id_evenement : INT <<PK>>
+  --
+  nom : VARCHAR(200)
+  date_event : DATE
+  heure : TIME
+  lieu : VARCHAR(200)
+  capacite : INT
+  prix_base : DECIMAL(8,2)
+  description : TEXT
+}
+
+entity "Client" as C {
+  * id_client : INT <<PK>>
+  --
+  prenom : VARCHAR(100)
+  nom : VARCHAR(100)
+  email : VARCHAR(150)
+  telephone : VARCHAR(30)
+  ville : VARCHAR(100)
+  date_creation : DATETIME
+}
+
+entity "Billet" as B {
+  * id_billet : INT <<PK>>
+  --
+  code_unique : VARCHAR(100) <<UNIQUE>>
+  fk_client : INT <<FK>>
+  fk_evenement : INT <<FK>>
+  date_achat : DATETIME
+  prix_paye : DECIMAL(8,2)
+  statut : VARCHAR(50) -- (vendu/reservé/annulé)
+}
+
+entity "Paiement" as P {
+  * id_paiement : INT <<PK>>
+  --
+  fk_billet : INT <<FK>>
+  montant : DECIMAL(8,2)
+  mode_paiement : VARCHAR(50)
+  date_paiement : DATETIME
+  reference : VARCHAR(200)
+}
+
+E ||--o{ B : "possède"
+C ||--o{ B : "achète"
+B ||--o{ P : "lié à"
+@enduml
