@@ -1,12 +1,12 @@
--- Données générées automatiquement avec Faker (corrigées)
+-- Données générées automatiquement avec Faker
 USE billeterie;
 
--- On vide les anciennes données pour éviter les erreurs de doublons
+
 DELETE FROM billet;
 DELETE FROM evenement;
 DELETE FROM client;
 
--- Clients (emails uniques)
+-- Clients 
 INSERT INTO client (nom, prenom, email) VALUES 
 ('Moulin', 'Isabelle', 'isabelle.moulin1@example.org'),
 ('Ruiz', 'Auguste', 'auguste.ruiz2@example.com'),
@@ -72,7 +72,7 @@ INSERT INTO evenement (nom, date_evenement, lieu, prix) VALUES
 ('La possibilité d évoluer de manière sûre', '2025-11-06', 'Henry', 27.27),
 ('La possibilité d évoluer autrement', '2025-12-05', 'Royer-sur-Pinto', 55.81);
 
--- Billets (inchangés)
+-- Billets 
 INSERT INTO billet (id_client, id_evenement, date_achat) VALUES 
 (44, 4, '2025-09-13'),
 (42, 9, '2025-08-20'),

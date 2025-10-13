@@ -2,18 +2,18 @@ from faker import Faker
 import random
 from datetime import datetime, timedelta
 
-# Initialisation de Faker
+
 fake = Faker('fr_FR')
 
-# Fichiers de sortie
+
 output_file = "data.sql"
 
-# Paramètres de génération
+
 NB_CLIENTS = 50
 NB_EVENEMENTS = 10
 NB_BILLETS = 100
 
-#Génération des clients
+
 clients_sql = []
 for i in range(NB_CLIENTS):
     nom = fake.last_name().replace("'", " ")
@@ -21,7 +21,7 @@ for i in range(NB_CLIENTS):
     email = fake.email().replace("'", " ")
     clients_sql.append(f"INSERT INTO client (nom, prenom, email) VALUES ('{nom}', '{prenom}', '{email}');")
 
-# --- Génération des événements ---
+
 evenements_sql = []
 for i in range(NB_EVENEMENTS):
     nom = fake.catch_phrase().replace("'", " ")
@@ -30,7 +30,7 @@ for i in range(NB_EVENEMENTS):
     prix = round(random.uniform(15, 120), 2)
     evenements_sql.append(f"INSERT INTO evenement (nom, date_evenement, lieu, prix) VALUES ('{nom}', '{date_evenement}', '{lieu}', {prix});")
 
-#Génération des billets
+
 billets_sql = []
 for i in range(NB_BILLETS):
     id_client = random.randint(1, NB_CLIENTS)
@@ -38,7 +38,7 @@ for i in range(NB_BILLETS):
     date_achat = fake.date_between(start_date="-60d", end_date="today")
     billets_sql.append(f"INSERT INTO billet (id_client, id_evenement, date_achat) VALUES ({id_client}, {id_evenement}, '{date_achat}');")
 
-#Écriture dans le fichier data.sql
+
 with open(output_file, "w", encoding="utf-8") as f:
     f.write("-- Données générées automatiquement avec Faker\n")
     f.write("USE billeterie;\n\n")
