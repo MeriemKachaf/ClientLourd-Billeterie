@@ -23,7 +23,7 @@ public class Evenement {
         this.description = description;
     }
 
-    // getters et setters
+    
     public int getId() { return id; }
     public String getNom() { return nom; }
     public LocalDate getDateEvent() { return dateEvent; }

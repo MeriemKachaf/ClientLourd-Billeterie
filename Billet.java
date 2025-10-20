@@ -20,7 +20,7 @@ public class Billet {
         this.prixPaye = prixPaye;
     }
 
-    // getters
+    
     public int getId() { return id; }
     public String getCodeUnique() { return codeUnique; }
     public Client getClient() { return client; }
@@ -29,3 +29,5 @@ public class Billet {
     public LocalDateTime getDateAchat() { return dateAchat; }
     public BigDecimal getPrixPaye() { return prixPaye; }
 }
+
+
