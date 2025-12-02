@@ -1,0 +1,16 @@
+{
+    "java.project.sourcePaths": [
+        "src"
+    ],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": [
+        "c:\\Users\\Mkacahf\\Desktop\\Bureau\\Clientlourd\\lib\\javafx.web.jar",
+        "c:\\Users\\Mkacahf\\Desktop\\Bureau\\Clientlourd\\lib\\javafx-swt.jar",
+        "c:\\Users\\Mkacahf\\Desktop\\Bureau\\Clientlourd\\lib\\javafx.controls.jar",
+        "c:\\Users\\Mkacahf\\Desktop\\Bureau\\Clientlourd\\lib\\javafx.swing.jar",
+        "c:\\Users\\Mkacahf\\Desktop\\Bureau\\Clientlourd\\lib\\javafx.media.jar",
+        "c:\\Users\\Mkacahf\\Desktop\\Bureau\\Clientlourd\\lib\\javafx.fxml.jar",
+        "c:\\Users\\Mkacahf\\Desktop\\Bureau\\Clientlourd\\lib\\javafx.graphics.jar",
+        "c:\\Users\\Mkacahf\\Desktop\\Bureau\\Clientlourd\\lib\\javafx.base.jar"
+    ]
+}
